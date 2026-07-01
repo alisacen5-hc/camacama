@@ -462,7 +462,7 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
 第二十二條（附件之效力）
 本契約之附件「犬、貓美容服務簽約前詢問事項及基本資料表」（包含但不限於紙本或線上填寫之毛孩資料卡/線上聯絡簿，
 內容包含寵物基本資料、健康狀況、個性傾向、病史、服務項目及相關告知事項），為本契約之一部分，與本契約具有同一之效力。
-        </pre>
+ </pre>
       </div>
 
       <div class="checkRow">
@@ -477,7 +477,10 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
 
       <div class="label">甲方姓名（飼主）</div>
       <input id="ownerName" class="input" placeholder="請輸入飼主姓名">
-      
+
+      <div class="label">身分證字號</div>
+      <input id="ownerIdNo" class="input" placeholder="請輸入身分證字號">
+
       <div class="label">聯絡電話</div>
       <input id="ownerPhone" class="input" inputmode="tel" placeholder="請輸入聯絡電話">
 
@@ -575,6 +578,12 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
       <div id="allergyDetailWrap" class="hidden">
         <div class="label">過敏內容</div>
         <input id="allergyDetail" class="input" placeholder="例：雞肉 / 牛肉 / 乳製品">
+      </div>
+
+      <div class="label">零食</div>
+      <div class="choiceRow" id="treatRow">
+        <label class="choice"><input type="radio" name="treatAllowed" value="可以" checked> 可以</label>
+        <label class="choice"><input type="radio" name="treatAllowed" value="不可以"> 不可以</label>
       </div>
 
       <div class="label">病史</div>
@@ -997,6 +1006,7 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
       emergencyName: requireValue(emergencyName, "緊急聯絡人"),
       emergencyPhone: requireValue(emergencyPhone, "緊急聯絡人電話"),
       ownerEmail: requireValue(ownerEmail, "Email（寄送附本用）"),
+      ownerIdNo: requireValue(ownerIdNo, "身分證字號"),
       ownerAddress: requireValue(ownerAddress, "通訊地址"),
 
       isOwnerSelf,
@@ -1107,6 +1117,7 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
 緊急聯絡人：${data.emergencyName}
 緊急聯絡人電話：${data.emergencyPhone}
 Email：${data.ownerEmail}
+身分證字號：${data.ownerIdNo}
 通訊地址：${data.ownerAddress}
 是否飼主本人：${data.isOwnerSelf}${data.ownerRelation ? "（關係：" + data.ownerRelation + "）" : ""}
 
@@ -1120,6 +1131,7 @@ Email：${data.ownerEmail}
 個性其他應注意：${ptNoteText}
 晶片：${chipText}
 食物過敏：${allergyText}
+零食：${data.treatAllowed}
 病史：${mhText}
 ${otherInjuryTextLine}
 病史其他應注意：${noteText}
@@ -1183,4 +1195,4 @@ ${completeNote}`;
 </script>
 
 </body>
-</html>
+</html>        
