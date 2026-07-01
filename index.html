@@ -477,9 +477,6 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
 
       <div class="label">甲方姓名（飼主）</div>
       <input id="ownerName" class="input" placeholder="請輸入飼主姓名">
-
-      <div class="label">身分證字號</div>
-      <input id="ownerIdNo" class="input" placeholder="請輸入身分證字號">
       
       <div class="label">聯絡電話</div>
       <input id="ownerPhone" class="input" inputmode="tel" placeholder="請輸入聯絡電話">
@@ -1000,7 +997,6 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
       emergencyName: requireValue(emergencyName, "緊急聯絡人"),
       emergencyPhone: requireValue(emergencyPhone, "緊急聯絡人電話"),
       ownerEmail: requireValue(ownerEmail, "Email（寄送附本用）"),
-      ownerIdNo: requireValue(ownerIdNo, "身分證字號"),
       ownerAddress: requireValue(ownerAddress, "通訊地址"),
 
       isOwnerSelf,
@@ -1111,7 +1107,6 @@ CAMA CAMA 寵物美容犬、貓美容服務定型化契約
 緊急聯絡人：${data.emergencyName}
 緊急聯絡人電話：${data.emergencyPhone}
 Email：${data.ownerEmail}
-身分證字號：${data.ownerIdNo}
 通訊地址：${data.ownerAddress}
 是否飼主本人：${data.isOwnerSelf}${data.ownerRelation ? "（關係：" + data.ownerRelation + "）" : ""}
 
